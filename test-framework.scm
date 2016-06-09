@@ -18,7 +18,7 @@
       (all-tests-passed (list-and test-statuses))
     )
     (if all-tests-passed
-      (display-all-on-line "All tests for " function-to-test " passed."))))
+      (display-all-on-line "\n" "All tests for " function-to-test " passed." "\n"))))
 
 (define (test-with-case function-to-test test-case)
   (let*
@@ -30,5 +30,5 @@
     (if (equal? desired-output actual-output)
       #t
       (begin
-        (display-all-on-line function-to-test " failure for inputs " input-args " - expected " desired-output ", got " actual-output)
+        (display-all-on-line "\n" function-to-test " failure for inputs " input-args " - expected " desired-output ", got " actual-output "\n")
         #f))))
